@@ -35,8 +35,8 @@ export const Form = () => {
   const handleCount = () => {
     setCount(count + 1);
   };
-  //  const returnedDebounce = useCallback(debounce(helloword, 2000), []);
-  const returnedDebounce = useCallback(throttling(helloword, 2000), []);
+    const returnedDebounce = useCallback(debounce(helloword, 2000), []);
+  // const returnedDebounce = useCallback(throttling(helloword, 2000), []);
   return (
     <>
       <input
@@ -44,7 +44,7 @@ export const Form = () => {
         placeholder="type"
         value={fromText}
         onKeyUp={(event) => {
-          returnedDebounce();
+          returnedDebounce(fromText);
         }}
         onChange={(event) => handleFormText(event)}
       />
